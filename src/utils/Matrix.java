@@ -8,8 +8,8 @@ public class Matrix {
     private int w;
     private int h;
     private int n;
-    private int dX;
-    private int dY;
+    private float dX;
+    private float dY;
 
     public Matrix(int screenWidth, int screenHeight, int x, int y, int w, int h, int n){
         this.x = screenWidth * x/100;
@@ -17,24 +17,24 @@ public class Matrix {
         this.w = screenWidth * w/100;
         this.h = screenHeight * h/100;
         this.n = n;
-        this.dX = this.w/this.n;
-        this.dY = this.h/this.n;
+        this.dX = (float) this.w/this.n;
+        this.dY = (float) this.h/this.n;
     }
 
     public void draw(Graphics2D graphics2D){
         graphics2D.setStroke(new BasicStroke(5));
         graphics2D.drawRect(x, y, w, h);
         for(int i = 1; i < n; i++){
-            graphics2D.drawLine(x, y + dY*i, x + w, y + dY*i);
+            graphics2D.drawLine(x, (int) (y + dY*i), x + w, (int) (y + dY*i));
         }
         for(int i = 1; i < n; i++){
-            graphics2D.drawLine(x + dX*i, y, x + dX*i, y + h);
+            graphics2D.drawLine((int) (x + dX*i), y, (int) (x + dX*i), y + h);
         }
         graphics2D.setStroke(new BasicStroke(1));
     }
 
     public void paintCell(Graphics2D graphics2D, int i, int j){
-        graphics2D.fillRect(x + j*dX, y + i*dY, dX, dY);
+        graphics2D.fillRect((int) (x + j*dX), (int) (y + i*dY), (int) dX, (int) dY);
     }
 
 }

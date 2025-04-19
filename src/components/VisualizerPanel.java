@@ -13,11 +13,12 @@ public class VisualizerPanel extends JPanel {
 
     @Override
     public void paint(Graphics graphics){
+        int n = 7;
         Graphics2D graphics2D= (Graphics2D) graphics;
         hr(graphics2D, 20);
-        Matrix matrix1 = new Matrix(this.getWidth(), this.getHeight(), 5, 28, 40, 35, 5);
+        Matrix matrix1 = new Matrix(this.getWidth(), this.getHeight(), 5, 28, 40, 35, n);
         matrix1.draw(graphics2D);
-        Matrix matrix2 = new Matrix(this.getWidth(), this.getHeight(), 55, 28, 40, 35, 5);
+        Matrix matrix2 = new Matrix(this.getWidth(), this.getHeight(), 55, 28, 40, 35, n);
         matrix2.draw(graphics2D);
         matrix1.paintCell(graphics2D,3,4);
         hr(graphics2D, 70);
