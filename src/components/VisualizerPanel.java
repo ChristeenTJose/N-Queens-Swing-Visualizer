@@ -21,7 +21,14 @@ public class VisualizerPanel extends JPanel {
     public void paint(Graphics graphics){
         int n = 7;
         Graphics2D graphics2D= (Graphics2D) graphics;
+        graphics2D.setPaint(Color.RED);
+        graphics2D.setFont(new Font("Ink Free", Font.BOLD, this.getWidth()*5/100));
+        graphics2D.drawString("N-Queens Visualizer", this.getWidth()*27/100, this.getHeight()*10/100);
+        graphics2D.setPaint(Color.BLACK);
         hr(graphics2D, 20);
+        graphics2D.setFont(new Font("Ink Free", Font.BOLD, this.getWidth()*2/100));
+        graphics2D.drawString("Look ahead approach: marking conflicts", this.getWidth()*5/100, this.getHeight()*25/100);
+        graphics2D.drawString("Look behind approach: checking safety", this.getWidth()*55/100, this.getHeight()*25/100);
         Matrix matrix1 = new Matrix(this.getWidth(), this.getHeight(), 5, 28, 40, 35, n);
         matrix1.draw(graphics2D);
         Matrix matrix2 = new Matrix(this.getWidth(), this.getHeight(), 55, 28, 40, 35, n);
