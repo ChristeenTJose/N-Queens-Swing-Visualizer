@@ -9,6 +9,12 @@ public class VisualizerPanel extends JPanel {
     public VisualizerPanel(){
         this.setPreferredSize(Toolkit.getDefaultToolkit().getScreenSize());
         this.setBorder(BorderFactory.createLineBorder(Color.black));
+        /*
+        JTextArea jTextArea = new JTextArea("Solutions: ", 10, 50);
+        jTextArea.setLocation(100, 100);
+        JScrollPane jScrollPane = new JScrollPane(jTextArea);
+        this.add(jScrollPane);
+         */
     }
 
     @Override
@@ -20,7 +26,10 @@ public class VisualizerPanel extends JPanel {
         matrix1.draw(graphics2D);
         Matrix matrix2 = new Matrix(this.getWidth(), this.getHeight(), 55, 28, 40, 35, n);
         matrix2.draw(graphics2D);
+        graphics2D.setPaint(Color.ORANGE);
         matrix1.paintCell(graphics2D,3,4);
+        graphics2D.setPaint(Color.ORANGE);
+        matrix1.paintCell(graphics2D,3,3);
         hr(graphics2D, 70);
     }
 
